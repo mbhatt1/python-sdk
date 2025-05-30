@@ -11,6 +11,10 @@
         <link rel="canonical" href="https://python-sdk-etdi.github.io/examples/etdi/oauth_providers/auth0/">
       
       
+        <link rel="prev" href="../../run_e2e_demo/">
+      
+      
+        <link rel="next" href="../../../../api/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -18,7 +22,7 @@
     
     
       
-        <title>Auth0 Integration Guide - ETDI Documentation</title>
+        <title>Auth0 Integration - ETDI Documentation</title>
       
     
     
@@ -55,7 +59,7 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Auth0 Integration Guide - ETDI Documentation" >
+        <meta  property="og:title"  content="Auth0 Integration - ETDI Documentation" >
       
         <meta  property="og:description"  content="None" >
       
@@ -71,7 +75,7 @@
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Auth0 Integration Guide - ETDI Documentation" >
+        <meta  name="twitter:title"  content="Auth0 Integration - ETDI Documentation" >
       
         <meta  name="twitter:description"  content="None" >
       
@@ -143,7 +147,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Auth0 Integration Guide
+              Auth0 Integration
             
           </span>
         </div>
@@ -488,18 +492,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -515,7 +521,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Examples
@@ -655,6 +661,374 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    OAuth Providers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_7">
+            <span class="md-nav__icon md-icon"></span>
+            OAuth Providers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Auth0 Integration
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Auth0 Integration
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auth0-setup-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auth0 Setup Details
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Auth0 Setup Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-auth0-for-demo-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring Auth0 for Demo Scripts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring Auth0 for Demo Scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#demo-script-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Demo Script Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-auth0-application-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Auth0 Application Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-auth0-api-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Auth0 API Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Environment Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-code-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Code Changes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Code Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-run_e2e_demopy" class="md-nav__link">
+    <span class="md-ellipsis">
+      For run_e2e_demo.py
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-run_real_server_demopy" class="md-nav__link">
+    <span class="md-ellipsis">
+      For run_real_server_demo.py
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-permissions-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Permissions Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-testing-the-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Testing the Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Issues
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-auth0-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Auth0 Provider
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secure-server-with-auth0" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secure Server with Auth0
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#client-with-auth0-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Client with Auth0 Authentication
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Best Practices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring-and-debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitoring and Debugging
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitoring and Debugging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enable-debug-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enable Debug Logging
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitor-auth0-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitor Auth0 Events
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-issues-and-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Issues and Solutions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-auth0-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing Auth0 Integration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Resources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
