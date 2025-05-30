@@ -447,6 +447,75 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#setting-up-auth0-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Up Auth0 Authentication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Up Auth0 Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-create-an-auth0-account-and-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Create an Auth0 Account and Application
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-configure-auth0-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Configure Auth0 API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-configure-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Configure Environment Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-initialize-auth0-in-your-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Initialize Auth0 in Your Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-test-auth0-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Test Auth0 Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-auth0" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting Auth0
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#enabling-request-signing" class="md-nav__link">
     <span class="md-ellipsis">
       Enabling Request Signing
@@ -942,6 +1011,75 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#setting-up-auth0-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Up Auth0 Authentication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Up Auth0 Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-create-an-auth0-account-and-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Create an Auth0 Account and Application
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-configure-auth0-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Configure Auth0 API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-configure-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Configure Environment Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-initialize-auth0-in-your-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Initialize Auth0 in Your Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-test-auth0-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Test Auth0 Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-auth0" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting Auth0
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#enabling-request-signing" class="md-nav__link">
     <span class="md-ellipsis">
       Enabling Request Signing
@@ -1069,6 +1207,122 @@
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 </code></pre></div>
+<h2 id="setting-up-auth0-authentication">Setting Up Auth0 Authentication</h2>
+<p>ETDI supports OAuth2 authentication through Auth0. Follow these steps to set up Auth0:</p>
+<h3 id="1-create-an-auth0-account-and-application">1. Create an Auth0 Account and Application</h3>
+<ol>
+<li>Sign up for an Auth0 account at <a href="https://auth0.com">auth0.com</a></li>
+<li>Create a new Application:
+   - Go to Applications &gt; Create Application
+   - Name it (e.g., "ETDI Tool Registry")
+   - Select "Machine to Machine" as the application type
+   - Click Create</li>
+</ol>
+<h3 id="2-configure-auth0-api">2. Configure Auth0 API</h3>
+<ol>
+<li>Go to Applications &gt; APIs</li>
+<li>
+<p>Create a new API:
+   - Name: "ETDI Tool Registry API"
+   - Identifier (audience): <code>https://api.etdi-tools.demo.com</code> (or your preferred URL)
+   - Signing Algorithm: RS256</p>
+</li>
+<li>
+<p>Define API Scopes:
+   - Go to the Permissions tab
+   - Add these scopes:</p>
+<ul>
+<li><code>create:resource-servers</code>: Create new tool registrations</li>
+<li><code>read:resource-servers</code>: Read tool information</li>
+<li><code>update:resource-servers</code>: Update existing tools</li>
+<li><code>delete:resource-servers</code>: Remove tool registrations</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-configure-environment-variables">3. Configure Environment Variables</h3>
+<p>Set up your environment variables:</p>
+<div class="language-bash highlight"><pre><span></span><code><span class="c1"># Auth0 Configuration</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">AUTH0_DOMAIN</span><span class="o">=</span><span class="s2">&quot;your-tenant.auth0.com&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">AUTH0_CLIENT_ID</span><span class="o">=</span><span class="s2">&quot;your-client-id&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">AUTH0_CLIENT_SECRET</span><span class="o">=</span><span class="s2">&quot;your-client-secret&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">AUTH0_AUDIENCE</span><span class="o">=</span><span class="s2">&quot;https://api.etdi-tools.demo.com&quot;</span>
+</code></pre></div>
+<h3 id="4-initialize-auth0-in-your-code">4. Initialize Auth0 in Your Code</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">mcp.etdi.oauth</span><span class="w"> </span><span class="kn">import</span> <span class="n">OAuthConfig</span><span class="p">,</span> <span class="n">Auth0Provider</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mcp.etdi.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">SecurityLevel</span>
+
+<span class="c1"># Create OAuth configuration</span>
+<span class="n">oauth_config</span> <span class="o">=</span> <span class="n">OAuthConfig</span><span class="p">(</span>
+    <span class="n">provider</span><span class="o">=</span><span class="s2">&quot;auth0&quot;</span><span class="p">,</span>
+    <span class="n">client_id</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;AUTH0_CLIENT_ID&quot;</span><span class="p">),</span>
+    <span class="n">client_secret</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;AUTH0_CLIENT_SECRET&quot;</span><span class="p">),</span>
+    <span class="n">domain</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;AUTH0_DOMAIN&quot;</span><span class="p">),</span>
+    <span class="n">audience</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;AUTH0_AUDIENCE&quot;</span><span class="p">),</span>
+    <span class="n">scopes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;create:resource-servers&quot;</span><span class="p">,</span> <span class="s2">&quot;read:resource-servers&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Initialize Auth0 provider</span>
+<span class="n">auth0_provider</span> <span class="o">=</span> <span class="n">Auth0Provider</span><span class="p">(</span><span class="n">oauth_config</span><span class="p">)</span>
+
+<span class="c1"># Create secure server with Auth0</span>
+<span class="n">server</span> <span class="o">=</span> <span class="n">SecureServer</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;my-secure-server&quot;</span><span class="p">,</span>
+    <span class="n">security_level</span><span class="o">=</span><span class="n">SecurityLevel</span><span class="o">.</span><span class="n">HIGH</span><span class="p">,</span>
+    <span class="n">oauth_provider</span><span class="o">=</span><span class="n">auth0_provider</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="5-test-auth0-integration">5. Test Auth0 Integration</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="c1"># test_auth0.py</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mcp.etdi.oauth</span><span class="w"> </span><span class="kn">import</span> <span class="n">OAuthConfig</span><span class="p">,</span> <span class="n">Auth0Provider</span>
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">test_auth0</span><span class="p">():</span>
+    <span class="n">oauth_config</span> <span class="o">=</span> <span class="n">OAuthConfig</span><span class="p">(</span>
+        <span class="n">provider</span><span class="o">=</span><span class="s2">&quot;auth0&quot;</span><span class="p">,</span>
+        <span class="n">client_id</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;AUTH0_CLIENT_ID&quot;</span><span class="p">),</span>
+        <span class="n">client_secret</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;AUTH0_CLIENT_SECRET&quot;</span><span class="p">),</span>
+        <span class="n">domain</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;AUTH0_DOMAIN&quot;</span><span class="p">),</span>
+        <span class="n">audience</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;AUTH0_AUDIENCE&quot;</span><span class="p">),</span>
+        <span class="n">scopes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;read:resource-servers&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="n">auth0_provider</span> <span class="o">=</span> <span class="n">Auth0Provider</span><span class="p">(</span><span class="n">oauth_config</span><span class="p">)</span>
+    <span class="k">await</span> <span class="n">auth0_provider</span><span class="o">.</span><span class="n">initialize</span><span class="p">()</span>
+
+    <span class="c1"># Test token acquisition</span>
+    <span class="n">token</span> <span class="o">=</span> <span class="k">await</span> <span class="n">auth0_provider</span><span class="o">.</span><span class="n">get_token</span><span class="p">(</span>
+        <span class="n">tool_id</span><span class="o">=</span><span class="s2">&quot;test-tool&quot;</span><span class="p">,</span>
+        <span class="n">permissions</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;read:resource-servers&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✅ Successfully acquired OAuth token&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Token type: Bearer&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Scopes: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">scopes</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">await</span> <span class="n">auth0_provider</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">test_auth0</span><span class="p">())</span>
+</code></pre></div>
+<h3 id="troubleshooting-auth0">Troubleshooting Auth0</h3>
+<p>Common issues and solutions:</p>
+<ol>
+<li>
+<p><strong>401 Unauthorized</strong>:
+   - Check if your client secret is correct
+   - Verify the audience matches your API identifier
+   - Ensure the application has the required scopes granted</p>
+</li>
+<li>
+<p><strong>403 Forbidden</strong>:
+   - Check if the required scopes are enabled in your Auth0 API
+   - Verify the application has been granted access to the API</p>
+</li>
+<li>
+<p><strong>Invalid Grant Type</strong>:
+   - Ensure "Client Credentials" grant type is enabled in your Auth0 application settings</p>
+</li>
+</ol>
+<p>For more details on Auth0 integration, see the <a href="../examples/etdi/oauth_providers/auth0/">Auth0 Integration Guide</a>.</p>
 <h2 id="enabling-request-signing">Enabling Request Signing</h2>
 <p>Request signing ensures that every tool invocation and API request is cryptographically signed and verifiable, protecting against tampering and impersonation. ETDI supports RSA and ECDSA algorithms, with automatic key management.</p>
 <p>Request signing is non-breaking and can be enabled incrementally—existing tools continue to work without modification.</p>
