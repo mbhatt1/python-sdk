@@ -8,16 +8,16 @@
       
       
       
-        <link rel="canonical" href="https://python-sdk-etdi.github.io/attack-prevention/">
+        <link rel="canonical" href="https://python-sdk-etdi.github.io/examples/etdi/oauth_providers/">
       
       
-        <link rel="prev" href="../security-features/">
+        <link rel="prev" href="../tool_poisoning_demo/">
       
       
-        <link rel="next" href="tool-poisoning/">
+        <link rel="next" href="auth0/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
@@ -26,10 +26,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -63,7 +63,7 @@
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://python-sdk-etdi.github.io/assets/images/social/attack-prevention.png" >
+        <meta  property="og:image"  content="https://python-sdk-etdi.github.io/assets/images/social/examples/etdi/oauth_providers/index.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -71,7 +71,7 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://python-sdk-etdi.github.io/attack-prevention/" >
+        <meta  property="og:url"  content="https://python-sdk-etdi.github.io/examples/etdi/oauth_providers/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
@@ -79,11 +79,11 @@
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://python-sdk-etdi.github.io/assets/images/social/attack-prevention.png" >
+        <meta  name="twitter:image"  content="https://python-sdk-etdi.github.io/assets/images/social/examples/etdi/oauth_providers/index.png" >
       
     
     
-   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -92,7 +92,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -111,7 +111,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#attack-prevention" class="md-skip">
+        <a href="#oauth-provider-integration-examples" class="md-skip">
           Skip to content
         </a>
       
@@ -127,7 +127,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="ETDI Documentation" class="md-header__button md-logo" aria-label="ETDI Documentation" data-md-component="logo">
+    <a href="../../.." title="ETDI Documentation" class="md-header__button md-logo" aria-label="ETDI Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -263,7 +263,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="ETDI Documentation" class="md-nav__button md-logo" aria-label="ETDI Documentation" data-md-component="logo">
+    <a href="../../.." title="ETDI Documentation" class="md-nav__button md-logo" aria-label="ETDI Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -293,7 +293,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -315,7 +315,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../etdi-concepts/" class="md-nav__link">
+      <a href="../../../etdi-concepts/" class="md-nav__link">
         
   
   
@@ -337,7 +337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../getting-started/" class="md-nav__link">
+      <a href="../../../getting-started/" class="md-nav__link">
         
   
   
@@ -356,18 +356,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -383,7 +385,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Examples
@@ -397,7 +399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../examples/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -458,7 +460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../examples/etdi/basic_usage/" class="md-nav__link">
+      <a href="../basic_usage/" class="md-nav__link">
         
   
   
@@ -481,7 +483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../examples/etdi/run_e2e_demo/" class="md-nav__link">
+      <a href="../run_e2e_demo/" class="md-nav__link">
         
   
   
@@ -504,7 +506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../examples/etdi/tool_poisoning_demo/" class="md-nav__link">
+      <a href="../tool_poisoning_demo/" class="md-nav__link">
         
   
   
@@ -532,18 +534,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
         
           
           <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
@@ -559,197 +563,10 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             OAuth Integration
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../examples/etdi/oauth_providers/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Overview
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../examples/etdi/oauth_providers/auth0/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Auth0 Setup
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../fastmcp/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    FastMCP Integration
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Security
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            Security
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../security-features/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Overview
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Attack Prevention
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_5_2">
-            <span class="md-nav__icon md-icon"></span>
-            Attack Prevention
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -810,19 +627,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tool-poisoning-prevention" class="md-nav__link">
+  <a href="#available-providers" class="md-nav__link">
     <span class="md-ellipsis">
-      Tool Poisoning Prevention
+      Available Providers
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Tool Poisoning Prevention">
+    <nav class="md-nav" aria-label="Available Providers">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-secure-tool-registration" class="md-nav__link">
+  <a href="#auth0" class="md-nav__link">
     <span class="md-ellipsis">
-      Example: Secure Tool Registration
+      Auth0
     </span>
   </a>
   
@@ -834,42 +651,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rug-poisoning-protection" class="md-nav__link">
+  <a href="#common-oauth-concepts" class="md-nav__link">
     <span class="md-ellipsis">
-      Rug Poisoning Protection
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Rug Poisoning Protection">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-versioned-tool-approval" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: Versioned Tool Approval
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#call-stack-security" class="md-nav__link">
-    <span class="md-ellipsis">
-      Call Stack Security
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#real-world-attack-scenarios" class="md-nav__link">
-    <span class="md-ellipsis">
-      Real-World Attack Scenarios
+      Common OAuth Concepts
     </span>
   </a>
   
@@ -879,6 +663,33 @@
   <a href="#best-practices" class="md-nav__link">
     <span class="md-ellipsis">
       Best Practices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-new-providers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding New Providers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
     </span>
   </a>
   
@@ -900,7 +711,190 @@
   
   
     <li class="md-nav__item">
-      <a href="tool-poisoning/" class="md-nav__link">
+      <a href="auth0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Auth0 Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fastmcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FastMCP Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Security
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Security
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Attack Prevention
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Attack Prevention
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../attack-prevention/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../attack-prevention/tool-poisoning/" class="md-nav__link">
         
   
   
@@ -923,7 +917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="rug-poisoning/" class="md-nav__link">
+      <a href="../../../attack-prevention/rug-poisoning/" class="md-nav__link">
         
   
   
@@ -961,7 +955,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/" class="md-nav__link">
+      <a href="../../../api/" class="md-nav__link">
         
   
   
@@ -1003,19 +997,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tool-poisoning-prevention" class="md-nav__link">
+  <a href="#available-providers" class="md-nav__link">
     <span class="md-ellipsis">
-      Tool Poisoning Prevention
+      Available Providers
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Tool Poisoning Prevention">
+    <nav class="md-nav" aria-label="Available Providers">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-secure-tool-registration" class="md-nav__link">
+  <a href="#auth0" class="md-nav__link">
     <span class="md-ellipsis">
-      Example: Secure Tool Registration
+      Auth0
     </span>
   </a>
   
@@ -1027,42 +1021,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rug-poisoning-protection" class="md-nav__link">
+  <a href="#common-oauth-concepts" class="md-nav__link">
     <span class="md-ellipsis">
-      Rug Poisoning Protection
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Rug Poisoning Protection">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-versioned-tool-approval" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: Versioned Tool Approval
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#call-stack-security" class="md-nav__link">
-    <span class="md-ellipsis">
-      Call Stack Security
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#real-world-attack-scenarios" class="md-nav__link">
-    <span class="md-ellipsis">
-      Real-World Attack Scenarios
+      Common OAuth Concepts
     </span>
   </a>
   
@@ -1072,6 +1033,33 @@
   <a href="#best-practices" class="md-nav__link">
     <span class="md-ellipsis">
       Best Practices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-new-providers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding New Providers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
     </span>
   </a>
   
@@ -1096,77 +1084,137 @@
   
 
 
-<h1 id="attack-prevention">Attack Prevention</h1>
-<p>ETDI provides robust protection against advanced AI security threats, including tool poisoning, rug poisoning, and unauthorized tool access. This page summarizes the core attack prevention strategies and how to implement them.</p>
-<h2 id="tool-poisoning-prevention">Tool Poisoning Prevention</h2>
-<p>Tool poisoning occurs when a malicious actor introduces or replaces a tool with a compromised version. ETDI prevents this via:</p>
-<ul>
-<li><strong>Cryptographic Signatures</strong>: All tools are signed and verified at registration and invocation. See <a href="tool-poisoning/">Tool Poisoning Demo</a> for details.</li>
-<li><strong>Audit Logs for Monitoring</strong>: Comprehensive audit logs capture tool activity, which can be fed into external monitoring systems to detect anomalous behavior and policy violations.</li>
-<li><strong>Approval Workflow</strong>: Users must explicitly approve new or changed tools before use.</li>
-</ul>
-<h3 id="example-secure-tool-registration">Example: Secure Tool Registration</h3>
-<div class="language-python highlight"><pre><span></span><code><span class="nd">@server</span><span class="o">.</span><span class="n">tool</span><span class="p">(</span><span class="s2">&quot;secure_file_read&quot;</span><span class="p">,</span> <span class="n">require_signature</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">secure_file_read</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="c1"># Implementation with cryptographic verification</span>
-    <span class="o">...</span>
-</code></pre></div>
-<h2 id="rug-poisoning-protection">Rug Poisoning Protection</h2>
-<p>Rug poisoning ("rug pull") is when a tool is swapped or modified after initial approval. ETDI detects and blocks this via:</p>
-<ul>
-<li><strong>Immutable Versioning</strong>: Every tool version is cryptographically hashed and tracked.</li>
-<li><strong>Change Detection</strong>: Any change to code, permissions, or metadata triggers reapproval.</li>
-<li><strong>Audit Trails</strong>: All tool changes and approvals are logged for forensics.</li>
-</ul>
-<p>Details on how ETDI mitigates this can be found in <a href="rug-poisoning/">Rug Poisoning Protection</a>.</p>
-<h3 id="example-versioned-tool-approval">Example: Versioned Tool Approval</h3>
-<div class="language-python highlight"><pre><span></span><code><span class="c1"># User approves tool version 1.0</span>
-<span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">approve_tool</span><span class="p">(</span><span class="n">tool_id</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">)</span>
-
-<span class="c1"># If the tool changes (hash mismatch), approval is revoked until reapproved by the user.</span>
-</code></pre></div>
-<h2 id="call-stack-security">Call Stack Security</h2>
-<p>Call stack security is crucial for preventing privilege escalation and unauthorized tool chaining, ensuring that a sequence of tool calls doesn't lead to unintended capabilities or data access.</p>
-<p>ETDI implements call stack security through several mechanisms:</p>
-<ul>
+<h1 id="oauth-provider-integration-examples">OAuth Provider Integration Examples</h1>
+<p>ETDI supports various OAuth providers for secure authentication and authorization. This section contains detailed guides and examples for integrating different OAuth providers with your ETDI implementation.</p>
+<h2 id="available-providers">Available Providers</h2>
+<h3 id="auth0"><a href="auth0/">Auth0</a></h3>
+<p>Complete guide for integrating Auth0 with ETDI, including:
+- Application setup and configuration
+- API and scope management
+- Demo script configuration
+- Troubleshooting and best practices</p>
+<h2 id="common-oauth-concepts">Common OAuth Concepts</h2>
+<p>All OAuth provider integrations in ETDI share some common concepts:</p>
+<ol>
 <li>
-<p><strong>Maximum Call Depth</strong>: Defines how many levels deep a tool invocation chain can go. This prevents runaway recursive calls or overly complex interactions that might obscure malicious activity or lead to denial-of-service.
-    <div class="language-python highlight"><pre><span></span><code><span class="c1"># Part of SecurityPolicy or individual tool definition</span>
-<span class="c1"># server = SecureServer(security_policy=SecurityPolicy(max_call_depth=5))</span>
-<span class="nd">@server</span><span class="o">.</span><span class="n">tool</span><span class="p">(</span><span class="s2">&quot;my_tool&quot;</span><span class="p">,</span> <span class="n">etdi_max_call_depth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">my_tool_impl</span><span class="p">():</span> <span class="o">...</span>
+<p><strong>Provider Configuration</strong>
+   <div class="language-python highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">mcp.etdi.oauth</span><span class="w"> </span><span class="kn">import</span> <span class="n">OAuthConfig</span>
+
+<span class="n">oauth_config</span> <span class="o">=</span> <span class="n">OAuthConfig</span><span class="p">(</span>
+    <span class="n">provider</span><span class="o">=</span><span class="s2">&quot;provider_name&quot;</span><span class="p">,</span>
+    <span class="n">client_id</span><span class="o">=</span><span class="s2">&quot;your_client_id&quot;</span><span class="p">,</span>
+    <span class="n">client_secret</span><span class="o">=</span><span class="s2">&quot;your_client_secret&quot;</span><span class="p">,</span>
+    <span class="n">domain</span><span class="o">=</span><span class="s2">&quot;your_domain&quot;</span><span class="p">,</span>
+    <span class="n">audience</span><span class="o">=</span><span class="s2">&quot;your_api_audience&quot;</span><span class="p">,</span>
+    <span class="n">scopes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;required&quot;</span><span class="p">,</span> <span class="s2">&quot;scopes&quot;</span><span class="p">]</span>
+<span class="p">)</span>
 </code></pre></div></p>
 </li>
 <li>
-<p><strong>Allowed/Blocked Callees</strong>: Tool definitions can specify which other tools they are explicitly allowed to call, or which ones they are explicitly forbidden from calling. This creates a more predictable and constrained interaction graph.
-    <div class="language-python highlight"><pre><span></span><code><span class="c1"># Part of SecurityPolicy or individual tool definition</span>
-<span class="c1"># policy = SecurityPolicy(allowed_callees={&quot;tool_a&quot;: [&quot;tool_b&quot;]})</span>
-<span class="nd">@server</span><span class="o">.</span><span class="n">tool</span><span class="p">(</span><span class="s2">&quot;tool_a&quot;</span><span class="p">,</span> <span class="n">etdi_allowed_callees</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;tool_b&quot;</span><span class="p">,</span> <span class="s2">&quot;tool_c&quot;</span><span class="p">])</span>
-<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">tool_a_impl</span><span class="p">():</span> <span class="o">...</span>
-
-<span class="nd">@server</span><span class="o">.</span><span class="n">tool</span><span class="p">(</span><span class="s2">&quot;sensitive_tool&quot;</span><span class="p">,</span> <span class="n">etdi_blocked_callees</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;network_tool&quot;</span><span class="p">,</span> <span class="s2">&quot;external_api_tool&quot;</span><span class="p">])</span>
-<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">sensitive_tool_impl</span><span class="p">():</span> <span class="o">...</span>
-</code></pre></div></p>
+<p><strong>Token Management</strong>
+   - Secure token storage
+   - Token refresh handling
+   - Token validation</p>
 </li>
 <li>
-<p><strong>Caller/Callee Authorization</strong>: Beyond just allowed/blocked lists, ETDI can enforce mutual authorization. This means not only must <code>tool_A</code> be allowed to call <code>tool_B</code>, but <code>tool_B</code> must also be configured to accept calls from <code>tool_A</code>. This is typically managed through permission and scope checks tied to the identities of the tools themselves (if they have their own service identities) or the user context propagating the call.</p>
+<p><strong>Scope Management</strong>
+   - Permission definition
+   - Scope validation
+   - Access control</p>
 </li>
 <li>
-<p><strong>Verification</strong>: The ETDI client and/or server-side middleware inspects the call stack at each invocation. If a call violates any of these constraints (e.g., exceeds max depth, calls a blocked tool, or lacks authorization), the invocation is rejected before the tool code executes.</p>
+<p><strong>Error Handling</strong>
+   - Authentication failures
+   - Authorization errors
+   - Token validation issues</p>
 </li>
-</ul>
-<p>These features collectively ensure that tool interactions are confined to well-defined boundaries, significantly reducing the attack surface.</p>
-<p>Refer to example scripts like <code>protocol_call_stack_example.py</code> and <code>caller_callee_authorization_example.py</code> in the <a href="../examples/">Examples &amp; Demos</a> section for practical implementations.</p>
-<h2 id="real-world-attack-scenarios">Real-World Attack Scenarios</h2>
-<ul>
-<li><strong>Tool Poisoning Demo</strong>: See the detailed <a href="tool-poisoning/">Tool Poisoning Prevention page</a> and its associated demo scripts in <code>examples/etdi/tool_poisoning_demo/</code>.</li>
-<li><strong>Rug Poisoning Detection</strong>: The framework automatically detects and blocks unauthorized tool changes as detailed in <a href="rug-poisoning/">Rug Poisoning Protection</a>.</li>
-</ul>
+</ol>
 <h2 id="best-practices">Best Practices</h2>
+<ol>
+<li>
+<p><strong>Security</strong>
+   - Use environment variables for sensitive data
+   - Implement proper error handling
+   - Follow OAuth 2.0 best practices
+   - Regular security audits</p>
+</li>
+<li>
+<p><strong>Configuration</strong>
+   - Validate all OAuth settings
+   - Test with minimal scopes first
+   - Monitor token usage and expiration
+   - Implement proper logging</p>
+</li>
+<li>
+<p><strong>Integration</strong>
+   - Start with basic authentication
+   - Add authorization gradually
+   - Test thoroughly in staging
+   - Monitor in production</p>
+</li>
+</ol>
+<h2 id="example-usage">Example Usage</h2>
+<p>Basic OAuth provider setup:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">mcp.etdi.oauth</span><span class="w"> </span><span class="kn">import</span> <span class="n">OAuthProvider</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mcp.etdi.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">OAuthConfig</span>
+
+<span class="c1"># Create configuration</span>
+<span class="n">config</span> <span class="o">=</span> <span class="n">OAuthConfig</span><span class="p">(</span>
+    <span class="n">provider</span><span class="o">=</span><span class="s2">&quot;your_provider&quot;</span><span class="p">,</span>
+    <span class="n">client_id</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;OAUTH_CLIENT_ID&quot;</span><span class="p">),</span>
+    <span class="n">client_secret</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;OAUTH_CLIENT_SECRET&quot;</span><span class="p">),</span>
+    <span class="n">domain</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;OAUTH_DOMAIN&quot;</span><span class="p">),</span>
+    <span class="n">audience</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;OAUTH_AUDIENCE&quot;</span><span class="p">),</span>
+    <span class="n">scopes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;read&quot;</span><span class="p">,</span> <span class="s2">&quot;write&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Initialize provider</span>
+<span class="n">provider</span> <span class="o">=</span> <span class="n">OAuthProvider</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+<span class="k">await</span> <span class="n">provider</span><span class="o">.</span><span class="n">initialize</span><span class="p">()</span>
+
+<span class="c1"># Use in secure server</span>
+<span class="n">server</span> <span class="o">=</span> <span class="n">SecureServer</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;secure-server&quot;</span><span class="p">,</span>
+    <span class="n">oauth_provider</span><span class="o">=</span><span class="n">provider</span><span class="p">,</span>
+    <span class="n">security_level</span><span class="o">=</span><span class="n">SecurityLevel</span><span class="o">.</span><span class="n">HIGH</span>
+<span class="p">)</span>
+</code></pre></div>
+<h2 id="adding-new-providers">Adding New Providers</h2>
+<p>To add support for a new OAuth provider:</p>
+<ol>
+<li>
+<p>Create provider class:
+   <div class="language-python highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">mcp.etdi.oauth</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseOAuthProvider</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">CustomProvider</span><span class="p">(</span><span class="n">BaseOAuthProvider</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_token</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># Implement token acquisition</span>
+        <span class="k">pass</span>
+
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">validate_token</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">token</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="c1"># Implement token validation</span>
+        <span class="k">pass</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Register provider:
+   <div class="language-python highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">mcp.etdi.oauth</span><span class="w"> </span><span class="kn">import</span> <span class="n">register_provider</span>
+
+<span class="n">register_provider</span><span class="p">(</span><span class="s2">&quot;custom&quot;</span><span class="p">,</span> <span class="n">CustomProvider</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Create documentation:
+   - Add provider guide (like auth0.md)
+   - Update this index
+   - Add examples and tests</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
 <ul>
-<li>Always require tool signatures in production.</li>
-<li>Regularly audit tool approval and change logs.</li>
-<li>Use strict call chain policies (max depth, allowed/blocked callees) for sensitive operations. </li>
+<li><a href="../../../security-features/">Security Features</a></li>
+<li><a href="../../../getting-started/">Getting Started</a></li>
+<li><a href="../../../etdi-concepts/">ETDI Concepts</a> </li>
 </ul>
 
 
@@ -1219,10 +1267,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
