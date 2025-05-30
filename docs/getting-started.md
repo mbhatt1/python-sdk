@@ -64,6 +64,127 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
+## Setting Up Auth0 Authentication
+
+ETDI supports OAuth2 authentication through Auth0. Follow these steps to set up Auth0:
+
+### 1. Create an Auth0 Account and Application
+
+1. Sign up for an Auth0 account at [auth0.com](https://auth0.com)
+2. Create a new Application:
+   - Go to Applications > Create Application
+   - Name it (e.g., "ETDI Tool Registry")
+   - Select "Machine to Machine" as the application type
+   - Click Create
+
+### 2. Configure Auth0 API
+
+1. Go to Applications > APIs
+2. Create a new API:
+   - Name: "ETDI Tool Registry API"
+   - Identifier (audience): `https://api.etdi-tools.demo.com` (or your preferred URL)
+   - Signing Algorithm: RS256
+
+3. Define API Scopes:
+   - Go to the Permissions tab
+   - Add these scopes:
+     - `create:resource-servers`: Create new tool registrations
+     - `read:resource-servers`: Read tool information
+     - `update:resource-servers`: Update existing tools
+     - `delete:resource-servers`: Remove tool registrations
+
+### 3. Configure Environment Variables
+
+Set up your environment variables:
+
+```bash
+# Auth0 Configuration
+export AUTH0_DOMAIN="your-tenant.auth0.com"
+export AUTH0_CLIENT_ID="your-client-id"
+export AUTH0_CLIENT_SECRET="your-client-secret"
+export AUTH0_AUDIENCE="https://api.etdi-tools.demo.com"
+```
+
+### 4. Initialize Auth0 in Your Code
+
+```python
+from mcp.etdi.oauth import OAuthConfig, Auth0Provider
+from mcp.etdi.types import SecurityLevel
+
+# Create OAuth configuration
+oauth_config = OAuthConfig(
+    provider="auth0",
+    client_id=os.getenv("AUTH0_CLIENT_ID"),
+    client_secret=os.getenv("AUTH0_CLIENT_SECRET"),
+    domain=os.getenv("AUTH0_DOMAIN"),
+    audience=os.getenv("AUTH0_AUDIENCE"),
+    scopes=["create:resource-servers", "read:resource-servers"]
+)
+
+# Initialize Auth0 provider
+auth0_provider = Auth0Provider(oauth_config)
+
+# Create secure server with Auth0
+server = SecureServer(
+    name="my-secure-server",
+    security_level=SecurityLevel.HIGH,
+    oauth_provider=auth0_provider
+)
+```
+
+### 5. Test Auth0 Integration
+
+```python
+# test_auth0.py
+import asyncio
+from mcp.etdi.oauth import OAuthConfig, Auth0Provider
+
+async def test_auth0():
+    oauth_config = OAuthConfig(
+        provider="auth0",
+        client_id=os.getenv("AUTH0_CLIENT_ID"),
+        client_secret=os.getenv("AUTH0_CLIENT_SECRET"),
+        domain=os.getenv("AUTH0_DOMAIN"),
+        audience=os.getenv("AUTH0_AUDIENCE"),
+        scopes=["read:resource-servers"]
+    )
+    
+    auth0_provider = Auth0Provider(oauth_config)
+    await auth0_provider.initialize()
+    
+    # Test token acquisition
+    token = await auth0_provider.get_token(
+        tool_id="test-tool",
+        permissions=["read:resource-servers"]
+    )
+    print("✅ Successfully acquired OAuth token")
+    print(f"   Token type: Bearer")
+    print(f"   Scopes: {', '.join(token.scopes)}")
+    
+    await auth0_provider.cleanup()
+
+if __name__ == "__main__":
+    asyncio.run(test_auth0())
+```
+
+### Troubleshooting Auth0
+
+Common issues and solutions:
+
+1. **401 Unauthorized**:
+   - Check if your client secret is correct
+   - Verify the audience matches your API identifier
+   - Ensure the application has the required scopes granted
+
+2. **403 Forbidden**:
+   - Check if the required scopes are enabled in your Auth0 API
+   - Verify the application has been granted access to the API
+
+3. **Invalid Grant Type**:
+   - Ensure "Client Credentials" grant type is enabled in your Auth0 application settings
+
+For more details on Auth0 integration, see the [Auth0 Integration Guide](examples/etdi/oauth_providers/auth0.md).
+
 ## Enabling Request Signing
 
 Request signing ensures that every tool invocation and API request is cryptographically signed and verifiable, protecting against tampering and impersonation. ETDI supports RSA and ECDSA algorithms, with automatic key management.
