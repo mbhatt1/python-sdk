@@ -1,51 +1,73 @@
-# Python SDK ETDI Examples
+# ETDI Examples
 
-This section provides various examples demonstrating the capabilities and usage of the Enhanced Tool Definition Interface (ETDI) Python SDK.
+This section contains examples and guides for using ETDI in various scenarios.
 
-## Categories
+## Core Examples
 
--   **[ETDI Core Examples](./etdi/index.md)**: Demonstrations of core ETDI security features, server and client implementations, and specific attack prevention mechanisms. These examples showcase how ETDI enhances the security of tool-based interactions.
-    -   Includes detailed walkthroughs of features like call stack security, OAuth integration, and cryptographic verification of tools.
-    -   See individual example pages like [`run_e2e_demo.md`](./etdi/run_e2e_demo.md) or [`basic_usage.md`](./etdi/basic_usage.md).
+- [Basic ETDI Usage](etdi/basic_usage.md): Get started with ETDI's core features
+- [E2E Demo](etdi/run_e2e_demo.md): Complete end-to-end demonstration
+- [Tool Poisoning Demo](etdi/tool_poisoning_demo.md): Security attack prevention
 
--   **[FastMCP Integration Example](../fastmcp/index.md)**: Showcases how to integrate ETDI security features seamlessly with the FastMCP decorator API.
-    -   Focuses on the ease of adding security flags like `etdi=True`, `etdi_permissions`, and call stack constraints directly in `@server.tool()` decorators.
+## OAuth Integration
 
-## Overview of Key Examples
+- [OAuth Providers](etdi/oauth_providers/index.md): Integrate various OAuth providers
+  - [Auth0 Integration](etdi/oauth_providers/auth0.md): Complete Auth0 setup guide
 
-Below is a summary of some important examples. Please refer to the specific sub-sections linked above for a complete list and detailed explanations.
+## FastMCP Integration
 
-### End-to-End Security Demo
+- [FastMCP Overview](../fastmcp/index.md): Using ETDI with FastMCP servers
 
--   **File**: `examples/etdi/run_e2e_demo.py`
--   **Documentation**: [`docs/examples/etdi/run_e2e_demo.md`](./etdi/run_e2e_demo.md)
--   **Description**: A comprehensive demonstration of ETDI features, including attack prevention, secure client-server interaction, and enforcement of security policies.
+## Example Categories
 
-### FastMCP with ETDI
+### Security Examples
+- Tool poisoning prevention
+- OAuth authentication
+- Request signing
+- Call chain verification
 
--   **File**: `examples/fastmcp/etdi_fastmcp_example.py`
--   **Documentation**: [`docs/fastmcp/index.md`](../fastmcp/index.md)
--   **Description**: Illustrates how to easily enable and configure ETDI security measures (permissions, call stack limits) using FastMCP decorators.
+### Integration Examples
+- FastMCP server integration
+- Custom OAuth providers
+- Event system usage
+- Tool discovery
 
-### Tool Poisoning Prevention
+### Development Examples
+- Basic tool registration
+- Custom provider implementation
+- Security policy configuration
+- Event handling
 
--   **Directory**: `examples/etdi/tool_poisoning_demo/`
--   **Documentation**: [`docs/examples/etdi/tool_poisoning_demo.md`](./etdi/tool_poisoning_demo.md)
--   **Description**: Demonstrates how ETDI prevents tool poisoning attacks by verifying tool authenticity and integrity.
+## Running the Examples
 
-### Request Signing Examples
+Most examples can be run directly from the examples directory:
 
-- **File**: `examples/etdi/request_signing_example.py`
-  - **Description**: Demonstrates client-side request signing using RSA/ECDSA algorithms.
-- **File**: `examples/etdi/request_signing_server_example.py`
-  - **Description**: Shows server-side signature verification for incoming requests.
-- **File**: `examples/etdi/comprehensive_request_signing_example.py`
-  - **Description**: Provides an end-to-end workflow for request signing and verification between client and server.
+```bash
+# Basic usage example
+python examples/etdi/basic_usage.py
 
-## Navigating the Examples
+# Complete E2E demo
+python examples/etdi/run_e2e_demo.py
 
--   Each major example or category has its own index page within the `docs/examples/` directory.
--   Python source code for these examples can be found in the `examples/` directory at the root of the project.
--   The documentation pages aim to explain the purpose, key features, and how to run each example.
+# Tool poisoning prevention demo
+python examples/etdi/tool_poisoning_demo/run_real_server_demo.py
+```
 
-Explore these examples to gain a practical understanding of how to leverage the ETDI Python SDK for building secure and robust tool-enabled applications. 
+## Example Requirements
+
+Make sure you have:
+
+1. Python 3.9 or higher
+2. ETDI package installed
+3. Required environment variables set
+4. OAuth provider credentials (if using OAuth examples)
+
+## Contributing Examples
+
+Want to contribute a new example? Follow these steps:
+
+1. Create your example in the appropriate directory
+2. Add documentation in the docs/examples directory
+3. Update this index
+4. Submit a pull request
+
+See [Contributing Guide](../../CONTRIBUTING.md) for more details. 

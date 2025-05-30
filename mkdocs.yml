@@ -19,19 +19,22 @@ nav:
   - Home: index.md
   - ETDI Concepts: etdi-concepts.md
   - Getting Started: getting-started.md
-  - Attack Prevention:
-      - Overview: attack-prevention.md
-      - Tool Poisoning: attack-prevention/tool-poisoning.md
-      - Rug Poisoning: attack-prevention/rug-poisoning.md
-  - Security Features: security-features.md
   - Examples:
       - Overview: examples/index.md
-      - ETDI Core Examples: examples/etdi/index.md
+      - Core Examples:
+          - Basic ETDI Usage: examples/etdi/basic_usage.md
+          - E2E Demo: examples/etdi/run_e2e_demo.md
+          - Tool Poisoning Demo: examples/etdi/tool_poisoning_demo.md
+      - OAuth Integration:
+          - Overview: examples/etdi/oauth_providers/index.md
+          - Auth0 Setup: examples/etdi/oauth_providers/auth0.md
       - FastMCP Integration: fastmcp/index.md
-      - Tool Poisoning Demo: examples/etdi/tool_poisoning_demo.md
-      # Individual ETDI Examples (add more as needed or keep them under ETDI Core Examples index)
-      - Basic ETDI Usage: examples/etdi/basic_usage.md
-      - E2E Demo: examples/etdi/run_e2e_demo.md
+  - Security:
+      - Overview: security-features.md
+      - Attack Prevention:
+          - Overview: attack-prevention.md
+          - Tool Poisoning: attack-prevention/tool-poisoning.md
+          - Rug Poisoning: attack-prevention/rug-poisoning.md
   - API Reference: api.md
 
 # TODO(Marcelo): Add Anthropic copyright?
